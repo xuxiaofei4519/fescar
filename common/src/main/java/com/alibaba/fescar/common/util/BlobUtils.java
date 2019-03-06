@@ -77,12 +77,7 @@ public class BlobUtils {
      */
     public static String inputStream2String(InputStream is) {
         try {
-            ByteArrayOutputStream baos = new ByteArrayOutputStream();
-            int i = -1;
-            while ((i = is.read()) != -1) {
-                baos.write(i);
-            }
-            return baos.toString();
+            return StringUtils.inputStream2String(is);
         } catch (Exception e) {
             throw new ShouldNeverHappenException(e);
         }
